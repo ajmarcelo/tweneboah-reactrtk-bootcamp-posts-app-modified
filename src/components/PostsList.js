@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SearchPost from "./SearchPost";
 import "./Posts.css";
-import { fetchPosts, fetchPost } from "../redux/slice/postsSlice";
-
+import { fetchPosts, fetchPost } from "../redux/slice/postsSlice"; 
 
 const PostsList = () => {
 //  dispatch
@@ -32,7 +31,7 @@ const PostsList = () => {
                 </h2>
             ) : (
                 posts.map(post => (
-                    <div className="post-details">
+                    <div key={post.id} className="post-details">
                         <h3>{post.title}</h3>
                         <p>{post.body}</p>
                     </div>
